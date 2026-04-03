@@ -1,19 +1,17 @@
 global:
-  domain: ALICE_LAKEHOUSE.alice-platform.com
+  domain: alice-lakehouse.alice-platform.com
 frontend:
   replicas: 2
-  image: ALICE_LAKEHOUSE/frontend:latest
+  image: alice-lakehouse/frontend:latest
   resources: { requests: { cpu: 100m, memory: 128Mi }, limits: { cpu: 500m, memory: 512Mi } }
 apiGateway:
   replicas: 2
-  image: ALICE_LAKEHOUSE/api-gateway:latest
+  image: alice-lakehouse/api-gateway:latest
   resources: { requests: { cpu: 200m, memory: 256Mi }, limits: { cpu: 1000m, memory: 1Gi } }
 coreEngine:
   replicas: 2
-  image: ALICE_LAKEHOUSE/core-engine:latest
+  image: alice-lakehouse/core-engine:latest
   resources: { requests: { cpu: 500m, memory: 512Mi }, limits: { cpu: 2000m, memory: 2Gi } }
-redis:
-  image: redis:7-alpine
 autoscaling:
   enabled: true
   minReplicas: 2
